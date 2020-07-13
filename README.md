@@ -5,13 +5,13 @@
 Este projeto foi construido usando as seguintes tecnologias:
 
 
-[Desktop App](https://git.inova.serpro.gov.br/equipe716/higia/tree/master/desktop_app) (Driver):
+[Desktop App](https://github.com/lleonesouza/higia-robots/tree/master/desktop_app) (Driver):
 [Typescript](https://www.typescriptlang.org/) + [Electron](https://www.electronjs.org/) + [React](https://reactjs.org/)
 
-[NodeMCU](https://git.inova.serpro.gov.br/equipe716/higia/tree/master/nodemcu) microcontroller:
+[NodeMCU](https://github.com/lleonesouza/higia-robots/tree/master/nodemcu) microcontroller:
 [Lua](https://www.lua.org/)
 
-[Server](https://git.inova.serpro.gov.br/equipe716/higia/tree/master/server) :
+[Server](https://github.com/lleonesouza/higia-robots/tree/master/server) :
 [Typescript](https://www.typescriptlang.org/) + [Express](https://expressjs.com/) + [MongoDb](https://www.mongodb.com/) (hosted on mongolab)
 
 
