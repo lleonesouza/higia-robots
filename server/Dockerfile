@@ -1,15 +1,39 @@
-FROM node:13-alpine3.10
+FROM node:15.3.0-alpine3.10 as build
+WORKDIR /usr/src/app
+COPY . .
+RUN yarn install --frozen-lockfile
+RUN yarn build
 
-WORKDIR /app
+################
+### Second Stage
+FROM node:15.3.0-alpine3.10 as modules
+WORKDIR /usr/src/app
+COPY ./package.json ./
+RUN mkdir prisma
+COPY ./prisma/schema.prisma ./prisma
+COPY ./prisma/.env ./prisma
+RUN yarn install --production
+RUN yarn generate
+# RUN yarn migrate
+# RUN yarn migrate:up
 
-COPY package*.json ./
+##################
+### Last Stage ###
+FROM node:15.3.0-alpine3.10
+WORKDIR /usr/src/app
 
-RUN npm install
 
-RUN npm install -g pm2
+COPY --from=build /usr/src/app/build ./build
+COPY --from=modules /usr/src/app/node_modules ./node_modules
+RUN mkdir prisma
+COPY ./prisma/.env ./prisma
+COPY ./prisma/schema.prisma ./prisma
+COPY ./prisma/dev.db ./prisma
+COPY ./package.json ./
 
-COPY build/bundle.js .
+RUN mkdir -p /tmp/downloads
 
-EXPOSE 5000
+EXPOSE 5001
 
-CMD ["node" , "bundle.js"]
+CMD [ "node", "./build/bundle.js" ]
+
