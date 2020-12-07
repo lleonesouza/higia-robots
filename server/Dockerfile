@@ -9,13 +9,7 @@ RUN yarn build
 FROM node:15.3.0-alpine3.10 as modules
 WORKDIR /usr/src/app
 COPY ./package.json ./
-RUN mkdir prisma
-COPY ./prisma/schema.prisma ./prisma
-COPY ./prisma/.env ./prisma
 RUN yarn install --production
-RUN yarn generate
-# RUN yarn migrate
-# RUN yarn migrate:up
 
 ##################
 ### Last Stage ###
@@ -25,13 +19,7 @@ WORKDIR /usr/src/app
 
 COPY --from=build /usr/src/app/build ./build
 COPY --from=modules /usr/src/app/node_modules ./node_modules
-RUN mkdir prisma
-COPY ./prisma/.env ./prisma
-COPY ./prisma/schema.prisma ./prisma
-COPY ./prisma/dev.db ./prisma
 COPY ./package.json ./
-
-RUN mkdir -p /tmp/downloads
 
 EXPOSE 5001
 
