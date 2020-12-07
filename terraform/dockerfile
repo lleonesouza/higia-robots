@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+RUN apt-get update && \
+    apt-get install ansible wger unzip python3-pip -y && \
+    pip install boto %% \
+    wget https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip \
+    unzip /tmp/terraform_0.13.5_linux_amd64.zip -d /usr/bin
+
+
+WORKDIR /usr/src/terraform
+
+COPY . . 
+
+RUN terraform init
+
