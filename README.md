@@ -2,7 +2,7 @@
 
 ![higia_logo](https://i.ibb.co/C9gNHxz/higia-logo.png)
 
-Techs used on the project:
+tech used in this project:
 
 [Desktop App](https://github.com/lleonesouza/higia-robots/tree/master/desktop_app) (Driver):
 [Typescript](https://www.typescriptlang.org/) + [Electron](https://www.electronjs.org/) + [React](https://reactjs.org/)
@@ -12,7 +12,6 @@ Techs used on the project:
 
 [Server](https://github.com/lleonesouza/higia-robots/tree/master/server) :
 [Typescript](https://www.typescriptlang.org/) + [Express](https://expressjs.com/) + [MongoDb](https://www.mongodb.com/) (hosted on mongolab)
-
 
 ## How it's work
 
