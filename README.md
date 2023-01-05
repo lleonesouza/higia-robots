@@ -14,10 +14,6 @@ Techs used on the project:
 [Typescript](https://www.typescriptlang.org/) + [Express](https://expressjs.com/) + [MongoDb](https://www.mongodb.com/) (hosted on mongolab)
 
 
-## Cleaner one
-
-The Cleaner One combine UV-C light with Nodemcu processor to destroy particles virus, bacteria and fungus in the floor. In this way, you can keep your envirtonmonet away of contamants
-
 ## How it's work
 
 Use a app to interface with the robot
@@ -28,9 +24,7 @@ Use a app to interface with the robot
 
 The Cleaner one combine UV-C light with Nodemcu processor to destroy particles virus, bacteria and fungus in the floor. In this way, you can keep your envirtonmonet away of contamants
 
-
 ![higia_desktop_1](https://i.ibb.co/SsP2QVs/Screenshot-222.png)
-
 
 Watch the video to know more about the project [video](https://youtu.be/DxRXdzf1Ugg).
 
